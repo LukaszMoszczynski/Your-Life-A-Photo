@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Chettan");
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Baloo Chettan', cursive;
+}
+
+.hideme {
+  opacity: 0;
+}
+
+.row {
+  margin-right: 0;
+}
+
+.button, .hero .header a {
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  font-size: 20px;
+  background-color: #16A085;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4%;
+}
+
+.button:hover, .hero .header a:hover {
+  box-shadow: 0 0 20px rgba(26, 188, 156, 0.8);
+  background-color: #1ABC9C;
+}
+
+.button:hover .insider, .hero .header a:hover .insider {
+  transition: all 0.3s ease;
+  left: 175px;
+}
+
+.button .insider, .hero .header a .insider {
+  background-color: #FFF;
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  left: -175px;
+  transform: rotateZ(45deg);
+}
+
+/*jumbotron*/
+.hero {
+  background-image: url("../images/hero_bg.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .navbar-default {
+  background-color: transparent;
+  border: none;
+  opacity: 0.8;
+  transition: 0.5s;
+  padding-top: 25px;
+}
+
+.hero .navbar-default .navbar-form {
+  border: none;
+}
+
+.hero .navbar-default .navbar-nav li {
+  font-weight: bold;
+}
+
+.hero .navbar-default .navbar-nav li a {
+  color: #FFFFFF;
+  transition: 0.3s;
+  position: relative;
+  text-decoration: none;
+}
+
+.hero .navbar-default .navbar-nav li a:hover {
+  color: #1ABC9C;
+}
+
+.hero .navbar-default .navbar-nav li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #1ABC9C;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.hero .navbar-default .navbar-nav li a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.hero .navbar-default .navbar-toggle {
+  border-color: #1ABC9C;
+}
+
+.hero .navbar-default .navbar-toggle:hover {
+  background-color: #16A085;
+}
+
+.hero .navbar-default .navbar-toggle:focus {
+  background-color: #16A085;
+}
+
+.hero .navbar-default .navbar-collapse {
+  text-align: center;
+  border-color: #1ABC9C;
+}
+
+.hero .navbar-default .navbar-collapse .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hero .navbar-default .icon-bar {
+  background-color: #1ABC9C;
+}
+
+.hero .spacer {
+  height: 50px;
+  margin: 0;
+}
+
+.hero .header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.hero .header h1 {
+  text-transform: uppercase;
+  font-weight: 100;
+  text-align: center;
+}
+
+.simple {
+  height: 100vh;
+}
+
+/*# sourceMappingURL=style.css.map */
