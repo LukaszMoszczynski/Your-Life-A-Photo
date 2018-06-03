@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo+Chettan");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 * {
   box-sizing: border-box;
   outline: none;
   font-family: 'Baloo Chettan', cursive;
+  letter-spacing: 2px;
 }
 
 .hideme {
@@ -13,7 +15,7 @@
   margin-right: 0;
 }
 
-.button, .hero .header a {
+.button, .hero .header a, .simple .container div a, .design .right a, .subscribe form button, .download .container div button {
   width: 200px;
   height: 50px;
   margin: 10px;
@@ -28,25 +30,58 @@
   justify-content: center;
   align-items: center;
   border-radius: 4%;
+  text-transform: uppercase;
 }
 
-.button:hover, .hero .header a:hover {
+.button:hover, .hero .header a:hover, .simple .container div a:hover, .design .right a:hover, .subscribe form button:hover, .download .container div button:hover {
   box-shadow: 0 0 20px rgba(26, 188, 156, 0.8);
   background-color: #1ABC9C;
 }
 
-.button:hover .insider, .hero .header a:hover .insider {
+.button:hover .insider, .hero .header a:hover .insider, .simple .container div a:hover .insider, .design .right a:hover .insider, .subscribe form button:hover .insider, .download .container div button:hover .insider {
   transition: all 0.3s ease;
   left: 175px;
 }
 
-.button .insider, .hero .header a .insider {
+.button .insider, .hero .header a .insider, .simple .container div a .insider, .design .right a .insider, .subscribe form button .insider, .download .container div button .insider {
   background-color: #FFF;
   width: 100%;
   height: 20px;
   position: absolute;
   left: -175px;
   transform: rotateZ(45deg);
+}
+
+.hover, .hero .navbar-default .navbar-nav li .hover, .footer .container .left-footer div a {
+  color: #FFFFFF;
+  transition: 0.3s;
+  position: relative;
+  text-decoration: none;
+}
+
+.hover:hover, .hero .navbar-default .navbar-nav li .hover:hover, .footer .container .left-footer div a:hover {
+  letter-spacing: 4px;
+  color: #16A085;
+}
+
+.hover:hover:before, .hero .navbar-default .navbar-nav li .hover:hover:before, .footer .container .left-footer div a:hover:before, .hover:hover:after, .hero .navbar-default .navbar-nav li .hover:hover:after, .footer .container .left-footer div a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.hover:before, .hero .navbar-default .navbar-nav li .hover:before, .footer .container .left-footer div a:before, .hover:after, .hero .navbar-default .navbar-nav li .hover:after, .footer .container .left-footer div a:after {
+  width: 0;
+  height: 3px;
+  content: " ";
+  background-color: #16A085;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transition: all 0.3s ease;
+}
+
+.hover:after, .hero .navbar-default .navbar-nav li .hover:after, .footer .container .left-footer div a:after {
+  top: 100%;
 }
 
 /*jumbotron*/
@@ -57,8 +92,9 @@
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  flex-direction: column;
 }
 
 .hero .navbar-default {
@@ -75,35 +111,9 @@
 
 .hero .navbar-default .navbar-nav li {
   font-weight: bold;
-}
-
-.hero .navbar-default .navbar-nav li a {
-  color: #FFFFFF;
-  transition: 0.3s;
-  position: relative;
-  text-decoration: none;
-}
-
-.hero .navbar-default .navbar-nav li a:hover {
-  color: #1ABC9C;
-}
-
-.hero .navbar-default .navbar-nav li a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #1ABC9C;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.hero .navbar-default .navbar-nav li a:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 150px;
 }
 
 .hero .navbar-default .navbar-toggle {
@@ -145,16 +155,373 @@
   align-items: center;
   flex-direction: column;
   color: #FFFFFF;
+  margin-bottom: 30vh;
 }
 
 .hero .header h1 {
   text-transform: uppercase;
-  font-weight: 100;
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+.hero .social {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero .social i {
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 25px;
+  transition: all 0.3s ease;
+}
+
+.hero .social i:hover {
+  color: #16A085;
+}
+
+/*simple section*/
+.simple {
+  background-image: url("../images/second.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 10% 0;
+}
+
+.simple .container div {
+  max-width: 700px;
+  padding-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0;
+}
+
+.simple .container div h2 {
+  color: #16A085;
+  text-transform: uppercase;
+}
+
+.simple .container div p {
+  padding: 5% 0;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 200%;
+}
+
+.simple .container div p span {
+  font-weight: 500;
+}
+
+.simple .container div a {
+  margin: 0;
+}
+
+/*design section*/
+.design .left .img-1 {
+  background-image: url(../images/iPhone1.png);
+}
+
+.design .left .img-2 {
+  background-image: url(../images/iPhone2.png);
+}
+
+.design .left .img-3 {
+  background-image: url(../images/iPhone3.png);
+}
+
+.design .left .img-4 {
+  background-image: url(../images/iPhone4.png);
+}
+
+.design .left .img-5 {
+  background-image: url(../images/iPhone5.png);
+}
+
+.design .left .my-carousel {
+  width: 320px;
+  height: 640px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.design .left .my-carousel ul {
+  position: absolute;
+  top: 20%;
+  margin: 0;
+  padding: 0;
+  width: 3100px;
+  margin-left: -320px;
+}
+
+.design .left .my-carousel ul li {
+  width: 320px;
+  height: 640px;
+  background-size: cover;
+  background-position: center;
+  list-style-type: none;
+  float: left;
+}
+
+.design .right {
+  padding: 10% 0;
+  position: relative;
+}
+
+.design .right h2 {
+  color: #16A085;
+  text-transform: uppercase;
+}
+
+.design .right p {
+  padding: 5% 0;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 200%;
+}
+
+.design .right p span {
+  font-weight: 500;
+}
+
+.design .right a {
+  margin: 0;
+}
+
+.design .right .navigation {
+  padding-top: 5%;
+}
+
+.design .right .navigation i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/*community section*/
+.community .container .row {
+  padding: 10% 0;
+}
+
+.community .container .row .col-md-3 {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.community .container .row .col-md-3 h3 {
+  padding: 5%;
+  text-transform: uppercase;
+}
+
+.community .container .row .col-md-3 p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.community .container .row .col-md-9 .img-5 {
+  background-image: url(../images/Livello5.png);
+}
+
+.community .container .row .col-md-9 .img-6 {
+  background-image: url(../images/Livello6.png);
+}
+
+.community .container .row .col-md-9 .img-7 {
+  background-image: url(../images/Livello5.png);
+}
+
+.community .container .row .col-md-9 .img-8 {
+  background-image: url(../images/Livello6.png);
+}
+
+.community .container .row .col-md-9 .row {
+  padding: 0;
+}
+
+.community .container .row .col-md-9 .row .my-carousel2 {
+  width: 840px;
+  height: 350px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.community .container .row .col-md-9 .row .my-carousel2 ul {
+  position: absolute;
+  top: 20%;
+  margin: 0;
+  padding: 0;
+  width: 1600px;
+  margin-left: -420px;
+}
+
+.community .container .row .col-md-9 .row .my-carousel2 ul li {
+  width: 420px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  list-style-type: none;
+  float: left;
+  margin-right: 10px;
+}
+
+.community .container .row .col-md-9 .row .my-carousel2 .indicators {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+
+.community .container .row .col-md-9 .row .my-carousel2 .indicators i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* subsribe section*/
+.subscribe {
+  background-image: url(../images/Livello3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-attachment: fixed;
+}
+
+.subscribe h1 {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.subscribe form {
+  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.subscribe form input {
+  height: 50px;
+  width: 250px;
+  text-transform: uppercase;
+  background-color: #FFFFFF;
+  color: #000;
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  border-radius: 3% 0 0 3%;
+  transition: 0.5s;
+  outline-color: #FFFFFF;
+}
+
+.subscribe form input::placeholder {
+  color: #000;
+}
+
+.subscribe form button {
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  text-transform: uppercase;
+  border-radius: 0 10% 10% 0;
+  border: 1px solid #16A085;
+  background-color: #16A085;
+  border: 1px solid #16A085;
+}
+
+.subscribe form button .insider {
+  width: 120%;
+  height: 10px;
+  left: -60px;
+  transform: rotateZ(75deg);
+}
+
+/*Download section*/
+.download {
+  background-color: #F5F6F7;
+  padding: 5% 0;
   text-align: center;
 }
 
-.simple {
-  height: 100vh;
+.download .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.download .container h1 {
+  text-transform: uppercase;
+}
+
+.download .container p {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 800px;
+  padding: 2% 0;
+}
+
+.download .container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.download .container div button {
+  background-color: #1ABC9C;
+  border: 1px #1ABC9C solid;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+.download .container div button i {
+  background-color: #16A085;
+  height: 50px;
+  width: 40px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download .container div button:hover {
+  background-color: #16A085;
+}
+
+/*section footer*/
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 0;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .container .left-footer div a {
+  color: #000;
+}
+
+.footer .container .left-footer div a:hover {
+  letter-spacing: 2px;
+}
+
+.footer .container .left-footer div span {
+  color: #16A085;
+}
+
+.footer .container .left-footer div p {
+  color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

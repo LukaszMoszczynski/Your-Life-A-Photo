@@ -1,22 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 
-$color-pink: #ED145B;
-$color-cream: #F4F4F4;
+
+$color-cream: #F5F6F7;
 $color-white: #FFFFFF;
-$color-grey: #5A5A5A;
 $color-green: #16A085;
 $color-black: #000;
 $color-lightGreen: #1ABC9C;
-
-
-
 
 *{
 	box-sizing: border-box;	
 	outline: none;
 	font-family: 'Baloo Chettan', cursive;
+	letter-spacing: 2px;
 }
+
 .hideme {
     opacity:0;
 }
@@ -40,6 +39,7 @@ $color-lightGreen: #1ABC9C;
 	justify-content: center;
 	align-items: center;
 	border-radius: 4%;
+	text-transform: uppercase;
 	&:hover {
 		box-shadow: 0 0 20px rgba(26, 188, 156, 0.8);
 		background-color: $color-lightGreen;
@@ -58,6 +58,34 @@ $color-lightGreen: #1ABC9C;
 	}
 }
 
+.hover {
+	color: $color-white;
+	transition: 0.3s;
+	position: relative;
+	text-decoration: none;
+	&:hover {
+		letter-spacing: 4px;
+		color: $color-green;
+	}
+	&:hover:before, &:hover:after {
+		width: 100%;
+		left: 0;
+	}
+	&:before, &:after {
+	width: 0;
+	height: 3px;
+	content: " ";
+	background-color: $color-green;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transition: all 0.3s ease;
+	}
+	&:after {
+		top: 100%;
+	}
+}	
+
 /*jumbotron*/
 .hero {
 	background-image: url("../images/hero_bg.png");
@@ -66,8 +94,9 @@ $color-lightGreen: #1ABC9C;
 	background-size: cover;
 	background-position: center;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
+	flex-direction: column;
 	.navbar-default {
 		background-color: transparent;
 		border: none;
@@ -80,81 +109,365 @@ $color-lightGreen: #1ABC9C;
 		.navbar-nav {
 			li {
 				font-weight: bold;
-				a {
-					color: $color-white; 
-					transition: 0.3s;
-					position: relative;
-					text-decoration: none;
-					&:hover {
-						color: $color-lightGreen;
-					}
-					&:before {
-						content: "";
-						position: absolute;
-						width: 100%;
-						height: 2px;
-						bottom: 0;
-						left: 0;
-						background-color: $color-lightGreen;
-						visibility: hidden;						
-						transform: scaleX(0);
-						transition: all 0.3s ease-in-out 0s;
-					}
-					&:hover:before {
-						visibility: visible;
-						transform: scaleX(1);
+				font-size: 20px;
+				text-transform: uppercase;
+				width: 150px;
+				.hover {
+					@extend .hover
+				}		
+			}
+		}
+		.navbar-toggle {
+			border-color: $color-lightGreen;
+			&:hover {
+				background-color: $color-green;
+			}
+			&:focus {
+				background-color: $color-green;
+			}
+		}
+		.navbar-collapse {
+			text-align: center;
+			border-color: $color-lightGreen;
+			.nav {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+		}
+		.icon-bar {
+			background-color: $color-lightGreen;
+		}	
+	}
+	.spacer {
+		height: 50px;
+		margin: 0;
+	}
+	.header {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		color: $color-white; 
+		margin-bottom: 30vh;
+		h1 {
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 10px;
+		}
+		a {
+			@extend .button
+		}
+	}
+ 	.social {
+ 		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		i {
+			color: $color-white;
+			cursor: pointer;
+			padding: 10px;
+			font-size: 25px;
+			transition: all 0.3s ease;
+			&:hover {
+				color: $color-green;
+			}
+		}		
+ 	}
+}
+/*simple section*/
+.simple {
+	background-image: url("../images/second.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 10% 0;
+	.container {
+		div {
+			max-width: 700px;
+			padding-left: 10%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			margin: 0;
+			h2 {
+				color: $color-green;
+				text-transform: uppercase;
+			}
+			p {
+				padding: 5% 0;
+				text-align: justify;
+				font-family: 'Open Sans', sans-serif;
+				line-height: 200%;
+				span {
+					font-weight: 500;
+				}
+			}
+			a {
+				@extend .button;
+				margin: 0;
+			}
+		}
+	}	
+}
+
+/*design section*/
+.design {
+	.left {
+		.img-1 {background-image: url(../images/iPhone1.png);}
+		.img-2 {background-image: url(../images/iPhone2.png);}
+		.img-3 {background-image: url(../images/iPhone3.png);}
+		.img-4 {background-image: url(../images/iPhone4.png);}
+		.img-5 {background-image: url(../images/iPhone5.png);}
+		.my-carousel {
+			width: 320px;
+			height: 640px;
+			margin: auto;
+			overflow: hidden;
+			position: relative;  
+			ul {
+				position: absolute;
+				top: 20%;
+				margin: 0;
+				padding: 0;
+				width: 3100px;
+				margin-left: -320px;
+				li {
+					width: 320px;
+					height: 640px;
+					background-size: cover;
+					background-position: center;
+					list-style-type: none;
+					float: left;
+				}
+			}
+		}
+	}
+	.right {
+		padding: 10% 0;
+		position: relative;
+		h2 {
+			color: $color-green;
+			text-transform: uppercase;
+		}
+		p {
+			padding: 5% 0;
+			text-align: justify;
+			font-family: 'Open Sans', sans-serif;
+			line-height: 200%;
+			span {
+				font-weight: 500;
+			}
+		}
+		a {
+			@extend .button;
+			margin: 0;
+		}
+		.navigation {
+			padding-top: 5%;
+			i {
+				font-size: 30px;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+/*community section*/
+.community {
+	.container {
+		.row {
+			padding: 10% 0;
+			.col-md-3 {
+				text-align: center;
+				padding-top: 10%;
+				h3 {
+					padding: 5%;
+					text-transform: uppercase;
+				}
+				p {
+					font-family: 'Open Sans', sans-serif;
+				}
+			}
+			.col-md-9 {
+				.img-5 {background-image: url(../images/Livello5.png);}
+				.img-6 {background-image: url(../images/Livello6.png);}
+				.img-7 {background-image: url(../images/Livello5.png);}
+				.img-8 {background-image: url(../images/Livello6.png);}
+				.row { 
+					padding: 0;
+					.my-carousel2 {
+					width: 840px;
+					height: 350px;
+					margin: 0;
+					overflow: hidden;
+					position: relative;  
+						ul {
+							position: absolute;
+							top: 20%;
+							margin: 0;
+							padding: 0;
+							width: 1600px;
+							margin-left: -420px;						
+							li {
+								width: 420px;
+								height: 350px;
+								background-size: cover;
+								background-position: center;
+								list-style-type: none;
+								float: left;
+								margin-right: 10px;
+							}
+						}
+						.indicators {
+							position: absolute;
+							right: 0;
+							top: 40px;
+							i {
+								font-size: 30px;
+								cursor: pointer;
+							}
+						}
 					}
 				}
 			}
 		}
-		.navbar-toggle {
-		    border-color: $color-lightGreen;
-		    &:hover {
-		    	background-color: $color-green;
-		    }
-		    &:focus {
-		    	background-color: $color-green;
-		    }
-		}
-		.navbar-collapse {
-	 		text-align: center;
-	 		border-color: $color-lightGreen;
-	 		.nav {
- 			    display: flex;
-			    align-items: center;
-			    justify-content: space-around;
-			    flex-wrap: wrap;
-			    width: 100%;
-	 		}
- 		}
- 		.icon-bar {
- 			background-color: $color-lightGreen;
- 		}
- 		
- 	}
- 	
- 	.spacer {
-	    height:50px;
-	    margin: 0;
 	}
- 	.header {
- 		display: flex;
-		align-items: center;
- 		flex-direction: column;
- 		color: $color-white; 
- 		h1 {
- 			text-transform: uppercase;
- 			font-weight: 100;
- 			text-align: center;
- 		}
- 		a {
- 			@extend .button
- 		}
- 	}
 }
 
-
-
-.simple {
+/* subsribe section*/
+.subscribe{
+	background-image: url(../images/Livello3.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-attachment: fixed;
+	h1{
+		text-align: center;
+		color: $color-white;
+	}
+	form {
+		color: $color-black;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		input {
+			height: 50px;
+			width: 250px;
+			text-transform: uppercase;
+			background-color: $color-white;
+			color: $color-black;
+			border: 1px solid $color-white;
+			text-align: center;
+			border-radius: 3% 0 0 3%;
+			transition: 0.5s;
+			outline-color: $color-white;	
+			&::placeholder {
+				color: $color-black;
+			}
+		}
+		button {
+			@extend .button;
+			height: 50px;
+			width: 50px;
+			margin: 0;
+			text-transform: uppercase;	
+			border-radius: 0 10% 10% 0;
+			border: 1px solid $color-green;
+			background-color: $color-green;
+			border: 1px solid $color-green;
+			.insider {
+				width: 120%;
+				height: 10px;
+				left: -60px;
+				transform: rotateZ(75deg);
+			}
+		}
+	}
+}
+
+/*Download section*/
+
+.download {
+	background-color: $color-cream;
+	padding: 5% 0;
+	text-align: center;
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		h1 {
+			text-transform: uppercase;
+		}
+		p {
+			font-family: 'Open Sans', sans-serif;
+			max-width: 800px;
+			padding: 2% 0;
+		}
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			button {
+				background-color: $color-lightGreen;
+				@extend .button;
+				border: 1px $color-lightGreen solid;
+				display: flex;
+				justify-content: flex-end;
+				padding: 0;
+				i {
+					background-color: $color-green;
+					height: 50px;
+					width: 40px;
+					margin-left: 10px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				&:hover {
+					background-color: $color-green;;
+				}
+			}
+		}
+	}
+}
+
+/*section footer*/
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2% 0;
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.left-footer {
+			div {
+				a {
+					@extend .hover;
+					color: $color-black;
+					&:hover {
+						letter-spacing: 2px;
+					}
+				}
+				span {
+					color: $color-green;
+				}
+				p {
+					color: $color-black;
+				}
+			}
+		}
+	}
 }

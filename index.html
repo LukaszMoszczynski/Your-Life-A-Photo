@@ -5,7 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Your life, a photo</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
@@ -26,24 +27,132 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li><a href="#">Home</a></li>
-			        <li><a href="#r">Photoapp</a></li>  
+			        <li><a href="#" class="hover">Home</a></li>
+			        <li><a href="#" class="hover">Photoapp</a></li>  
 			        <li><a href="#"><img alt="Brand" src="images/icon1.png"></a></li> 
-			        <li><a href="#">Design</a></li> 
-			        <li><a href="#">Download</a></li> 
+			        <li><a href="#" class="hover">Design</a></li> 
+			        <li><a href="#" class="hover">Download</a></li> 
 			      </ul>
 			    </div><!-- /.navbar-colapse -->
 			   </div>
 			</div><!-- /.container -->
 			</nav>
-			<div class="spacer"></div>
-			<div class ="header" id="startchange">
+			<div class="spacer" id="startchange"></div>
+			<div class ="header">
 				<h1>Your life , a photo</h1>
 				<h4>print your life in a simple photo</h4>
 				<a href="#"><div class='insider'></div>Show more</a>
 			</div>
+			<div class="social">
+				<i class="fa fa-twitter"></i>
+				<i class="fab fa-flickr"></i>
+				<i class="fa fa-dribbble"></i>
+			</div>
 		</section>
 		<section class="simple">
+			<div class="container">
+			<div>
+				<h2>Rapresent your life with a simple photo</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> 
+				sed do eiusmod tempor incididunt ut labore et dolore <br>
+				magna aliqua. Ut <span>enim ad minim</span> veniam, quis <br>
+				nostrud exercitation ullamco laboris nisi <br>
+				ut aliquip ex ea commodo consequat.</p>
+				<a href="#"><div class='insider'></div>Get started</a>
+			</div>
+			</div>
+		</section>
+		<section class="design">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 left">
+						<div id="my-carousel" class="my-carousel">
+							<ul class="images">
+								<li class="img-1"></li>
+								<li class="img-2"></li>
+								<li class="img-3"></li>
+								<li class="img-4"></li>
+								<li class="img-5"></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6 right">
+						<h2>Design</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> 
+						sed do eiusmod tempor incididunt ut labore et dolore <br>
+						magna aliqua. Ut <span>enim ad minim</span> veniam, quis <br>
+						nostrud exercitation ullamco laboris nisi <br>
+						ut aliquip ex ea commodo consequat.</p>
+						<a href="#"><div class='insider'></div>Learn more</a>
+						<div class="navigation">
+							<div><span id="design-id">01</span>/<span id="design-max">05</span></div>
+							<i id="design-left" class="fa fa-angle-left"></i>
+							<i id="design-right" class="fa fa-angle-right"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="community">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<img alt="Brand" src="images/icon2.png">
+						<h3>Our community</h3>
+						<p>Lorem ipsum dolor sir <br> amet, consectetur <br> apdipiscing elit.</p>
+					</div>
+					<div class="col-md-9">
+						<div class="row">
+							<div id="my-carousel2" class="my-carousel2">
+								<div class="indicators">
+									<i id="community-left" class="fa fa-angle-left"></i>
+									<i id="community-right" class="fa fa-angle-right"></i>
+								</div>
+								<ul class="images">
+									<li class="img-5"></li>
+									<li class="img-6"></li>
+									<li class="img-7"></li>
+									<li class="img-8"></li>
+								</ul>
+							</div>
+						</div>	
+					</div>
+				</div>			
+			</div>		
+		</section>
+		<section class="subscribe">
+			<h1>Subscribe to us community</h1>
+			<form>
+				<input placeholder="Email address" required type="email">
+				<button type="submit"><div class='insider'></div><i class="fa fa-check" aria-hidden="true"></i></button>
+			</form>
+		</section>
+		<section class="download">
+			<div class="container">
+				<h1>Download it</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<div class="buttons">
+					<button><div class='insider'></div>Apple store<i class="fa fa-apple"></i></button>
+					<button><div class='insider'></div>Play store<i class="fa fa-android"></i></button>
+				</div>
+			</div>
+		</section>
+		<section class="footer">
+			<div class="container">
+				<div class="left-footer">
+					<div>
+						<a href="#">Credits</a>
+						<span>|</span>
+						<a href="#">Privacy</a>
+						<span>|</span>
+						<a href="#">Our teams</a>
+					</div>
+					<p>Copyright by phototime - all right reserved</p>
+				</div>
+				<div class="right-footer">
+					<img alt="Brand" src="images/icon2.png">
+				</div>
+			</div>
 		</section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
