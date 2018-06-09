@@ -360,12 +360,18 @@
 
 .community .container .row .col-md-9 .row {
   padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 .community .container .row .col-md-9 .row .my-carousel2 {
   width: 840px;
   height: 350px;
-  margin: 0;
+  margin: auto;
   overflow: hidden;
   position: relative;
 }
@@ -375,8 +381,14 @@
   top: 20%;
   margin: 0;
   padding: 0;
-  width: 1600px;
+  width: 1720px;
   margin-left: -420px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 .community .container .row .col-md-9 .row .my-carousel2 ul li {

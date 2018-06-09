@@ -297,20 +297,26 @@ $color-lightGreen: #1ABC9C;
 				.img-7 {background-image: url(../images/Livello5.png);}
 				.img-8 {background-image: url(../images/Livello6.png);}
 				.row { 
-					padding: 0;
+					padding: 0;	
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					.my-carousel2 {
 					width: 840px;
 					height: 350px;
-					margin: 0;
-					overflow: hidden;
+					margin: auto;
+					overflow: hidden; 
 					position: relative;  
 						ul {
 							position: absolute;
 							top: 20%;
 							margin: 0;
 							padding: 0;
-							width: 1600px;
-							margin-left: -420px;						
+							width: 1720px;
+							margin-left: -420px;	
+							display: flex;
+							justify-content: center;
+							align-items: center;					
 							li {
 								width: 420px;
 								height: 350px;

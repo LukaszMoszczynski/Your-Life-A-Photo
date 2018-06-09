@@ -339,12 +339,15 @@
 
 .community .container .row .col-md-9 .row {
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .community .container .row .col-md-9 .row .my-carousel2 {
   width: 840px;
   height: 350px;
-  margin: 0;
+  margin: auto;
   overflow: hidden;
   position: relative;
 }
@@ -354,8 +357,11 @@
   top: 20%;
   margin: 0;
   padding: 0;
-  width: 1600px;
+  width: 1720px;
   margin-left: -420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .community .container .row .col-md-9 .row .my-carousel2 ul li {
