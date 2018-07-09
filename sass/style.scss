@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-
+/*Global*/
 
 $color-cream: #F5F6F7;
 $color-white: #FFFFFF;
@@ -18,6 +18,10 @@ $color-lightGreen: #1ABC9C;
 
 .hideme {
     opacity:0;
+}
+
+.slide {
+	margin-left: 5000px;
 }
 
 .row {
@@ -87,6 +91,14 @@ $color-lightGreen: #1ABC9C;
 }	
 
 /*jumbotron*/
+
+.navbar-fixed-top .navbar-collapse {
+	max-height: 100vh;
+}
+.collapsing {
+	max-height: 100vh;
+}
+
 .hero {
 	background-image: url("../images/hero_bg.png");
 	height: 100vh;
@@ -111,10 +123,22 @@ $color-lightGreen: #1ABC9C;
 				font-weight: bold;
 				font-size: 20px;
 				text-transform: uppercase;
-				width: 150px;
+				width: 160px;
 				.hover {
-					@extend .hover
-				}		
+					@extend .hover;
+				}
+				.menuIcon {
+					height: 70px;
+					width: 150px;
+					background-image: url("../images/icon1.png");
+					background-repeat: no-repeat;
+					background-position: center;
+					&:hover {
+						background-image: url("../images/icon3.png");
+						background-repeat: no-repeat;
+						background-position: center;
+					}	
+				}					
 			}
 		}
 		.navbar-toggle {
@@ -128,7 +152,10 @@ $color-lightGreen: #1ABC9C;
 		}
 		.navbar-collapse {
 			text-align: center;
-			border-color: $color-lightGreen;
+			border: none;
+			box-shadow: none;
+			height: 100vh;
+			transition: 0.5s;
 			.nav {
 				display: flex;
 				align-items: center;
@@ -157,7 +184,7 @@ $color-lightGreen: #1ABC9C;
 			letter-spacing: 10px;
 		}
 		a {
-			@extend .button
+			@extend .button;
 		}
 	}
  	.social {
@@ -215,6 +242,7 @@ $color-lightGreen: #1ABC9C;
 
 /*design section*/
 .design {
+	padding: 0 5%;
 	.left {
 		.img-1 {background-image: url(../images/iPhone1.png);}
 		.img-2 {background-image: url(../images/iPhone2.png);}
@@ -280,7 +308,7 @@ $color-lightGreen: #1ABC9C;
 	.container {
 		.row {
 			padding: 10% 0;
-			.col-md-3 {
+			.col-sm-3 {
 				text-align: center;
 				padding-top: 10%;
 				h3 {
@@ -291,7 +319,7 @@ $color-lightGreen: #1ABC9C;
 					font-family: 'Open Sans', sans-serif;
 				}
 			}
-			.col-md-9 {
+			.col-sm-9 {
 				.img-5 {background-image: url(../images/Livello5.png);}
 				.img-6 {background-image: url(../images/Livello6.png);}
 				.img-7 {background-image: url(../images/Livello5.png);}
@@ -458,6 +486,7 @@ $color-lightGreen: #1ABC9C;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		.left-footer {
 			div {
 				a {
@@ -474,6 +503,137 @@ $color-lightGreen: #1ABC9C;
 					color: $color-black;
 				}
 			}
+		}
+	}
+}
+
+
+
+/*RWD*/
+
+@media(max-width: 1199px) {
+	.community {
+		.container{
+			.row {
+				.col-sm-9 {
+					.row { 
+						.my-carousel2 {
+							width: 420px;
+						}
+					}
+				}  
+			}
+		}
+	}
+}
+
+@media(max-width: 991px) {
+	.hideme {
+	    opacity: 1;
+	}
+
+	.slide {
+		margin-left: 0;
+	}
+	.hero {
+		.navbar-default {
+			.navbar-nav {
+				li {
+					width: 140px;
+					.hover {
+						&:hover {
+							letter-spacing: 2px;
+						}
+					}					
+				}
+			}
+		}
+	}
+	.design {
+		.left {
+			.my-carousel {
+				height: 520px;
+			}
+		}
+		.right {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			.navigation {
+				text-align: center;
+				position: absolute;
+				top: -20px;
+			}
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	.row {
+		margin: 0 auto;
+	}
+	.hero {
+		.navbar-default {
+			background-color: $color-black;
+			background-size: cover;
+			background-position: center;
+			padding: 0;	
+			.navbar-collapse {
+				.nav {
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					flex-direction: column;
+					
+					height: 95vh;
+					margin: 0;
+					li {
+						padding: 0;
+					}
+					.icon {
+						display: none;
+					}
+				}
+			}
+		}
+		.navbar-header {
+			display: flex;
+			justify-content: flex-start;
+			padding-left: 5%;
+		}
+		.navbar-colapse.in {
+		}
+	}
+
+	.design {
+		.right {
+			padding-bottom: 0;
+		}
+	}
+	.community {
+		.container {
+			.row {
+				padding-top: 0;
+			}
+		}
+	}
+	.subscribe {
+		height: 60vh;
+	}
+}
+
+@media(max-width: 459px) {
+	.subscribe {
+		form {
+			input {
+				width: 200px;
+			}
+		}
+	}
+	.footer{
+		.container {
+			justify-content: center;
 		}
 	}
 }

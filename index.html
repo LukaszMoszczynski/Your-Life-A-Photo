@@ -27,21 +27,21 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li><a href="#" class="hover">Home</a></li>
-			        <li><a href="#" class="hover">Photoapp</a></li>  
-			        <li><a href="#" class="menuIcon"><img alt="Brand" src="images/icon1.png"></a></li> 
-			        <li><a href="#" class="hover">Design</a></li> 
-			        <li><a href="#" class="hover">Download</a></li> 
+			        <li><a href="#home" class="hover">Home</a></li>
+			        <li><a href="#simple" class="hover">Photoapp</a></li>  
+			        <li class="icon"><a href="#home" class="menuIcon"></a></li> 
+			        <li><a href="#design" class="hover">Design</a></li> 
+			        <li><a href="#download" class="hover">Download</a></li> 
 			      </ul>
 			    </div><!-- /.navbar-colapse -->
 			   </div>
 			</div><!-- /.container -->
 			</nav>
 			<div class="spacer" id="startchange"></div>
-			<div class ="header">
+			<div class ="header hideme">
 				<h1>Your life , a photo</h1>
 				<h4>print your life in a simple photo</h4>
-				<a href="#"><div class='insider'></div>Show more</a>
+				<a href="#simple"><div class='insider'></div>Show more</a>
 			</div>
 			<div class="social">
 				<i class="fa fa-twitter"></i>
@@ -49,7 +49,7 @@
 				<i class="fa fa-dribbble"></i>
 			</div>
 		</section>
-		<section class="simple">
+		<section class="simple hideme" id="simple">
 			<div class="container">
 			<div>
 				<h2>Rapresent your life with a simple photo</h2>
@@ -58,14 +58,14 @@
 				magna aliqua. Ut <span>enim ad minim</span> veniam, quis <br>
 				nostrud exercitation ullamco laboris nisi <br>
 				ut aliquip ex ea commodo consequat.</p>
-				<a href="#"><div class='insider'></div>Get started</a>
+				<a href="#design"><div class='insider'></div>Get started</a>
 			</div>
 			</div>
 		</section>
-		<section class="design">
-			<div class="container">
+		<section class="design" id="design">
+			<div class="container hideme">
 				<div class="row">
-					<div class="col-lg-6 left">
+					<div class="col-md-6 left">
 						<div id="my-carousel" class="my-carousel">
 							<ul class="images">
 								<li class="img-2"></li>
@@ -76,14 +76,14 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-lg-6 right">
+					<div class="col-md-6 right">
 						<h2>Design</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> 
 						sed do eiusmod tempor incididunt ut labore et dolore <br>
 						magna aliqua. Ut <span>enim ad minim</span> veniam, quis <br>
 						nostrud exercitation ullamco laboris nisi <br>
 						ut aliquip ex ea commodo consequat.</p>
-						<a href="#"><div class='insider'></div>Learn more</a>
+						<a href="#download"><div class='insider'></div>Learn more</a>
 						<div class="navigation">
 							<div><span id="design-id">01</span>/<span id="design-max">05</span></div>
 							<i id="design-left" class="fa fa-angle-left"></i>
@@ -94,15 +94,15 @@
 			</div>
 		</section>
 		<section class="community">
-			<div class="container">
+			<div class="container hideme">
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-sm-3">
 						<img alt="Brand" src="images/icon2.png">
 						<h3>Our community</h3>
 						<p>Lorem ipsum dolor sir <br> amet, consectetur <br> apdipiscing elit.</p>
 					</div>
-					<div class="col-md-9">
-						<div class="row">
+					<div class="col-sm-9">
+						<div class="row slide">
 							<div id="my-carousel2" class="my-carousel2">
 								<div class="indicators">
 									<i id="community-left" class="fa fa-angle-left"></i>
@@ -121,17 +121,17 @@
 			</div>		
 		</section>
 		<section class="subscribe">
-			<h1>Subscribe to us community</h1>
-			<form>
+			<h1 class = "hideme">Subscribe to us community</h1>
+			<form class = "hideme slide">
 				<input placeholder="Email address" required type="email">
 				<button type="submit"><div class='insider'></div><i class="fa fa-check" aria-hidden="true"></i></button>
 			</form>
 		</section>
-		<section class="download">
-			<div class="container">
+		<section class="download" id="download">
+			<div class="container hideme">
 				<h1>Download it</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<div class="buttons">
+				<div class="buttons slide">
 					<button><div class='insider'></div>Apple store<i class="fa fa-apple"></i></button>
 					<button><div class='insider'></div>Play store<i class="fa fa-android"></i></button>
 				</div>
@@ -150,7 +150,7 @@
 					<p>Copyright by phototime - all right reserved</p>
 				</div>
 				<div class="right-footer">
-					<img alt="Brand" src="images/icon2.png">
+					<img alt="Brand" src="images/icon3.png">
 				</div>
 			</div>
 		</section>

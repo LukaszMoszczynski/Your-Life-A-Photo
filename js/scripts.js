@@ -1,29 +1,22 @@
 $(document).ready(function(){       
    //sticky navbar
-  var scroll_start = 0;  
-  var startchange = $('#startchange');
-  var offset = startchange.offset();
-  if (startchange.length){
-    $(document).scroll(function() { 
-      scroll_start = $(this).scrollTop();
-      if(scroll_start > offset.top) {
-          $(".navbar-default").css('background-color', '#000000');
-          $(".navbar-default").css('padding-top', '0');
-       } else {
-          $('.navbar-default').css('background-color', 'transparent');
-          $(".navbar-default").css('padding-top', '25px');
-       }
-    });
+  if($(window).width() >= 768) {
+    var scroll_start = 0;  
+    var startchange = $('#startchange');
+    var offset = startchange.offset();
+    if (startchange.length){
+      $(document).scroll(function() { 
+        scroll_start = $(this).scrollTop();
+        if(scroll_start > offset.top) {
+            $(".navbar-default").css('background-color', '#000000');
+            $(".navbar-default").css('padding-top', '0');
+         } else {
+            $('.navbar-default').css('background-color', 'transparent');
+            $(".navbar-default").css('padding-top', '25px');
+         }
+      });
+    }
   }
-//hover on menu-icon
-  var menuIcon = $(".menuIcon");
-  menuIcon.mouseover(function(){
-    $(this).html('<img alt="Brand" src="images/icon3.png">')
-  });
-  menuIcon.mouseleave(function(){
-    $(this).html('<img alt="Brand" src="images/icon1.png">')
-  });
-  
 //1 st carousel
   var carouselList = $("#my-carousel .images");
   function moveFirstSlide() {
@@ -89,8 +82,8 @@ $(document).ready(function(){
       if (numberVar >= 1 && numberVar <= maxNumberVar){
         number.text('0' + numberVar);
       } else {
-      numberVar = 5;
-      number.text('0' + numberVar);
+      numberVar = maxNumberVar;
+      number.text(numberVar);
      }
   }
 
@@ -131,5 +124,78 @@ $(document).ready(function(){
     clearInterval(interval2);
     interval2 = setInterval(changeNextSlide2, 5000);
   });
+
+//close navbar on menu click
+if($(window).width() < 768) {
+ $(".nav li").click(function(){ 
+   $(".navbar-toggle").click();
+  });
+}
+
+//scroll
+
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+  // fade in
+  /* Every time the window is scrolled ... */
+  if($(window).width() > 991) {
+    $(window).scroll( function(){ 
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){        
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();          
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > (bottom_of_object-80) ){
+                $(this).animate({'opacity':'1'},500);                       
+            }        
+        });   
+    });
+
+    $(window).scroll( function(){ 
+        
+        $('.slide').each( function(i){        
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();          
+            
+            if( bottom_of_window > (bottom_of_object-100) ){
+                $(this).animate({'margin-left':'0'},700);                       
+            }        
+        });   
+    });
+  }
+
 });
 

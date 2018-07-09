@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo+Chettan");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/*Global*/
 * {
   box-sizing: border-box;
   outline: none;
@@ -9,6 +10,10 @@
 
 .hideme {
   opacity: 0;
+}
+
+.slide {
+  margin-left: 5000px;
 }
 
 .row {
@@ -88,6 +93,14 @@
 }
 
 /*jumbotron*/
+.navbar-fixed-top .navbar-collapse {
+  max-height: 100vh;
+}
+
+.collapsing {
+  max-height: 100vh;
+}
+
 .hero {
   background-image: url("../images/hero_bg.png");
   height: 100vh;
@@ -120,7 +133,21 @@
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
+  width: 160px;
+}
+
+.hero .navbar-default .navbar-nav li .menuIcon {
+  height: 70px;
   width: 150px;
+  background-image: url("../images/icon1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero .navbar-default .navbar-nav li .menuIcon:hover {
+  background-image: url("../images/icon3.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero .navbar-default .navbar-toggle {
@@ -137,7 +164,10 @@
 
 .hero .navbar-default .navbar-collapse {
   text-align: center;
-  border-color: #1ABC9C;
+  border: none;
+  box-shadow: none;
+  height: 100vh;
+  transition: 0.5s;
 }
 
 .hero .navbar-default .navbar-collapse .nav {
@@ -243,6 +273,10 @@
 }
 
 /*design section*/
+.design {
+  padding: 0 5%;
+}
+
 .design .left .img-1 {
   background-image: url(../images/iPhone1.png);
 }
@@ -328,37 +362,37 @@
   padding: 10% 0;
 }
 
-.community .container .row .col-md-3 {
+.community .container .row .col-sm-3 {
   text-align: center;
   padding-top: 10%;
 }
 
-.community .container .row .col-md-3 h3 {
+.community .container .row .col-sm-3 h3 {
   padding: 5%;
   text-transform: uppercase;
 }
 
-.community .container .row .col-md-3 p {
+.community .container .row .col-sm-3 p {
   font-family: 'Open Sans', sans-serif;
 }
 
-.community .container .row .col-md-9 .img-5 {
+.community .container .row .col-sm-9 .img-5 {
   background-image: url(../images/Livello5.png);
 }
 
-.community .container .row .col-md-9 .img-6 {
+.community .container .row .col-sm-9 .img-6 {
   background-image: url(../images/Livello6.png);
 }
 
-.community .container .row .col-md-9 .img-7 {
+.community .container .row .col-sm-9 .img-7 {
   background-image: url(../images/Livello5.png);
 }
 
-.community .container .row .col-md-9 .img-8 {
+.community .container .row .col-sm-9 .img-8 {
   background-image: url(../images/Livello6.png);
 }
 
-.community .container .row .col-md-9 .row {
+.community .container .row .col-sm-9 .row {
   padding: 0;
   display: -ms-flexbox;
   display: flex;
@@ -368,7 +402,7 @@
       align-items: center;
 }
 
-.community .container .row .col-md-9 .row .my-carousel2 {
+.community .container .row .col-sm-9 .row .my-carousel2 {
   width: 840px;
   height: 350px;
   margin: auto;
@@ -376,7 +410,7 @@
   position: relative;
 }
 
-.community .container .row .col-md-9 .row .my-carousel2 ul {
+.community .container .row .col-sm-9 .row .my-carousel2 ul {
   position: absolute;
   top: 20%;
   margin: 0;
@@ -391,7 +425,7 @@
       align-items: center;
 }
 
-.community .container .row .col-md-9 .row .my-carousel2 ul li {
+.community .container .row .col-sm-9 .row .my-carousel2 ul li {
   width: 420px;
   height: 350px;
   background-size: cover;
@@ -401,13 +435,13 @@
   margin-right: 10px;
 }
 
-.community .container .row .col-md-9 .row .my-carousel2 .indicators {
+.community .container .row .col-sm-9 .row .my-carousel2 .indicators {
   position: absolute;
   right: 0;
   top: 40px;
 }
 
-.community .container .row .col-md-9 .row .my-carousel2 .indicators i {
+.community .container .row .col-sm-9 .row .my-carousel2 .indicators i {
   font-size: 30px;
   cursor: pointer;
 }
@@ -574,6 +608,8 @@
       align-items: center;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .footer .container .left-footer div a {
@@ -590,5 +626,101 @@
 
 .footer .container .left-footer div p {
   color: #000;
+}
+
+/*RWD*/
+@media (max-width: 1199px) {
+  .community .container .row .col-sm-9 .row .my-carousel2 {
+    width: 420px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hideme {
+    opacity: 1;
+  }
+  .slide {
+    margin-left: 0;
+  }
+  .hero .navbar-default .navbar-nav li {
+    width: 140px;
+  }
+  .hero .navbar-default .navbar-nav li .hover:hover, .hero .navbar-default .navbar-nav li .footer .container .left-footer div a:hover, .footer .container .left-footer div .hero .navbar-default .navbar-nav li a:hover {
+    letter-spacing: 2px;
+  }
+  .design .left .my-carousel {
+    height: 520px;
+  }
+  .design .right {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+  .design .right .navigation {
+    text-align: center;
+    position: absolute;
+    top: -20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .row {
+    margin: 0 auto;
+  }
+  .hero .navbar-default {
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+  }
+  .hero .navbar-default .navbar-collapse .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: 95vh;
+    margin: 0;
+  }
+  .hero .navbar-default .navbar-collapse .nav li {
+    padding: 0;
+  }
+  .hero .navbar-default .navbar-collapse .nav .icon {
+    display: none;
+  }
+  .hero .navbar-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    padding-left: 5%;
+  }
+  .design .right {
+    padding-bottom: 0;
+  }
+  .community .container .row {
+    padding-top: 0;
+  }
+  .subscribe {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 459px) {
+  .subscribe form input {
+    width: 200px;
+  }
+  .footer .container {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
 }
 /*# sourceMappingURL=style.prefixed.css.map */
