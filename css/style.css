@@ -20,7 +20,7 @@
   margin-right: 0;
 }
 
-.button, .hero .header a, .simple .container div a, .design .right a, .subscribe form button, .download .container div button {
+.button, .hero .header a, .simple .container div a, .design .right a, .subscribe .container form button, .download .container div button {
   width: 200px;
   height: 50px;
   margin: 10px;
@@ -41,17 +41,17 @@
   text-transform: uppercase;
 }
 
-.button:hover, .hero .header a:hover, .simple .container div a:hover, .design .right a:hover, .subscribe form button:hover, .download .container div button:hover {
+.button:hover, .hero .header a:hover, .simple .container div a:hover, .design .right a:hover, .subscribe .container form button:hover, .download .container div button:hover {
   box-shadow: 0 0 20px rgba(26, 188, 156, 0.8);
   background-color: #1ABC9C;
 }
 
-.button:hover .insider, .hero .header a:hover .insider, .simple .container div a:hover .insider, .design .right a:hover .insider, .subscribe form button:hover .insider, .download .container div button:hover .insider {
+.button:hover .insider, .hero .header a:hover .insider, .simple .container div a:hover .insider, .design .right a:hover .insider, .subscribe .container form button:hover .insider, .download .container div button:hover .insider {
   transition: all 0.3s ease;
   left: 175px;
 }
 
-.button .insider, .hero .header a .insider, .simple .container div a .insider, .design .right a .insider, .subscribe form button .insider, .download .container div button .insider {
+.button .insider, .hero .header a .insider, .simple .container div a .insider, .design .right a .insider, .subscribe .container form button .insider, .download .container div button .insider {
   background-color: #FFF;
   width: 100%;
   height: 20px;
@@ -464,12 +464,16 @@
   background-attachment: fixed;
 }
 
-.subscribe h1 {
+.subscribe .container {
+  overflow: hidden;
+}
+
+.subscribe .container h1 {
   text-align: center;
   color: #FFFFFF;
 }
 
-.subscribe form {
+.subscribe .container form {
   color: #000;
   display: -ms-flexbox;
   display: flex;
@@ -479,7 +483,7 @@
       justify-content: center;
 }
 
-.subscribe form input {
+.subscribe .container form input {
   height: 50px;
   width: 250px;
   text-transform: uppercase;
@@ -492,19 +496,19 @@
   outline-color: #FFFFFF;
 }
 
-.subscribe form input::-webkit-input-placeholder {
+.subscribe .container form input::-webkit-input-placeholder {
   color: #000;
 }
 
-.subscribe form input:-ms-input-placeholder {
+.subscribe .container form input:-ms-input-placeholder {
   color: #000;
 }
 
-.subscribe form input::placeholder {
+.subscribe .container form input::placeholder {
   color: #000;
 }
 
-.subscribe form button {
+.subscribe .container form button {
   height: 50px;
   width: 50px;
   margin: 0;
@@ -515,7 +519,7 @@
   border: 1px solid #16A085;
 }
 
-.subscribe form button .insider {
+.subscribe .container form button .insider {
   width: 120%;
   height: 10px;
   left: -60px;
@@ -538,6 +542,7 @@
       align-items: center;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .download .container h1 {

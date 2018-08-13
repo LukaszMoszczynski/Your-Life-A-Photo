@@ -383,48 +383,51 @@ $color-lightGreen: #1ABC9C;
 	justify-content: center;
 	flex-direction: column;
 	background-attachment: fixed;
-	h1{
-		text-align: center;
-		color: $color-white;
-	}
-	form {
-		color: $color-black;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		input {
-			height: 50px;
-			width: 250px;
-			text-transform: uppercase;
-			background-color: $color-white;
-			color: $color-black;
-			border: 1px solid $color-white;
+	.container { 
+		overflow: hidden;
+		h1{
 			text-align: center;
-			border-radius: 3% 0 0 3%;
-			transition: 0.5s;
-			outline-color: $color-white;	
-			&::placeholder {
+			color: $color-white;
+		}
+		form {
+			color: $color-black;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			input {
+				height: 50px;
+				width: 250px;
+				text-transform: uppercase;
+				background-color: $color-white;
 				color: $color-black;
+				border: 1px solid $color-white;
+				text-align: center;
+				border-radius: 3% 0 0 3%;
+				transition: 0.5s;
+				outline-color: $color-white;	
+				&::placeholder {
+					color: $color-black;
+				}
+			}
+			button {
+				@extend .button;
+				height: 50px;
+				width: 50px;
+				margin: 0;
+				text-transform: uppercase;	
+				border-radius: 0 10% 10% 0;
+				border: 1px solid $color-green;
+				background-color: $color-green;
+				border: 1px solid $color-green;
+				.insider {
+					width: 120%;
+					height: 10px;
+					left: -60px;
+					transform: rotateZ(75deg);
+				}
 			}
 		}
-		button {
-			@extend .button;
-			height: 50px;
-			width: 50px;
-			margin: 0;
-			text-transform: uppercase;	
-			border-radius: 0 10% 10% 0;
-			border: 1px solid $color-green;
-			background-color: $color-green;
-			border: 1px solid $color-green;
-			.insider {
-				width: 120%;
-				height: 10px;
-				left: -60px;
-				transform: rotateZ(75deg);
-			}
-		}
-	}
+	}	
 }
 
 /*Download section*/
@@ -438,6 +441,7 @@ $color-lightGreen: #1ABC9C;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		overflow: hidden;
 		h1 {
 			text-transform: uppercase;
 		}
